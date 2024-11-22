@@ -1,0 +1,33 @@
+# Microservice Object
+microservice:
+  - app: user-authentication
+    port: 9000
+    version: 1.7
+    deployed: yes
+  - app: shopping-cart
+    port: 9001
+    version: 1.9
+
+
+#List of microservice name
+microservices:
+  - user-authentication
+  - shopping-cart
+
+
+# Nested List in List
+my-app:
+  - app: app-name
+    port: 9000
+    version: 1.7
+    deployed: yes
+  - app: calculate
+    port: 9001
+    # Nested List
+    # versions: 
+    # - 1.2
+    # - 1.5
+    # - 1.9
+    versions: [1.2, 1.5, 1.9]
+
+

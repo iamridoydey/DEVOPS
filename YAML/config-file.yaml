@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: configMap
+metadata:
+# placeholder {{}}
+  name: {{Values.service.mosquitto.name}}
+data:
+  mosquitto.config: |
+    log_dest stdout
+    log_type all
+    log_tiemstamp true
+    listener 9001
+
+# Environmental variable using $
+command:
+  - "/bin/sh"
+  - -ec
+  - >-
+    mysql -h 127.0,0.1 -u root -p$MYSQL_ROOT_PASSWORD -e "SELECT 1"
